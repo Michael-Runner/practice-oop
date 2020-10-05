@@ -29,7 +29,7 @@ public class City {
     private String index;
     private String code;
 
-    City()
+    public City()
     {
         name = "null";
         region = "null";
@@ -39,7 +39,7 @@ public class City {
         code = "null";
     }
 
-    City( String name, String region, String country, int inhabitants, String index, String code)
+    public City( String name, String region, String country, int inhabitants, String index, String code)
     {
         this.name = name;
         this.region = region;
