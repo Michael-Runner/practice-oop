@@ -40,8 +40,8 @@ public class Country {
     private String name;
     private String continent;
     private String code;
-    private org.itstep.task02.City capital = new org.itstep.task02.City();
-    private org.itstep.task02.City[] cities = new org.itstep.task02.City[0];
+    private City capital = new City();
+    private City[] cities = new City[0];
 
     Country()
     {
@@ -51,12 +51,12 @@ public class Country {
         capital.setName("null");
     }
 
-    Country(String name, String continent, String code, String capital)
+    Country(String name, String continent, String code, City capital)
     {
         this.name = name;
         this.continent = continent;
         this.code = code;
-        this.capital.setName(capital);
+        this.capital = capital;
     }
 
     public void fill()
@@ -117,22 +117,16 @@ public class Country {
         return code;
     }
 
-    public void setCapital()
-    {
-        capital.fill();
+    public void setCapital(City capital) {
+        this.capital = capital;
     }
 
-    public void getCapital()
-    {
-        capital.show();
+    public City getCapital() {
+        return capital;
     }
 
-    public void setCities()
-    {
-        for(int i = 0; i< cities.length; i++)
-        {
-            cities[i].fill();
-        }
+    public void setCities(City[] cities) {
+        this.cities = cities;
     }
 
     public void getCities()
@@ -147,7 +141,7 @@ public class Country {
     {
         int allInhabitants = 0;
 
-        for (int i = 0; i< cities.length; i++)
+        for (int i = 0; i < cities.length; i++)
         {
             allInhabitants = allInhabitants + cities[i].getInhabitants();
         }
@@ -155,10 +149,10 @@ public class Country {
         return allInhabitants;
     }
 
-    public void addCity()
+    public void addCity(City city)
     {
-        org.itstep.task02.City[] addCity = Arrays.copyOf(cities, cities.length+1);
+        City[] addCity = Arrays.copyOf(cities, cities.length+1);
         this.cities = addCity;
-        cities[cities.length-1].fill();
+        cities[cities.length-1] = city;
     }
 }
