@@ -71,7 +71,7 @@ public class MainString {
         str.len = string.len + len;
         int counter = 0;
 
-        for (int i = 0; i<str.chars.length; i++)
+        for (int i = 0; i < str.chars.length; i++)
         {
             if(i < len)
             {
@@ -101,11 +101,11 @@ public class MainString {
         return id;
     }
 
-    public String toString(String str)
+    public String toString()
     {
-        str =  String.valueOf(chars[0]);
+        String str =  new String();
 
-        for (int i = 1; i<chars.length; i++)
+        for (int i = 0; i<chars.length; i++)
         {
             str = str + String.valueOf(chars[i]);
         }
