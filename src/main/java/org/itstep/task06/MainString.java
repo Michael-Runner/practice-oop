@@ -34,6 +34,7 @@ public class MainString {
     MainString(String string)
     {
         chars = new char[string.length()];
+        len = string.length();
 
         for (int i = 0; i < string.length(); i++)
         {
@@ -44,11 +45,28 @@ public class MainString {
     MainString(char symbol, int len)
     {
         chars = new char[len];
+        this.len = len;
 
         for (int i = 0; i < len; i++)
         {
             chars[i] = symbol;
         }
+    }
+
+    public void setChars(char[] chars) {
+        this.chars = chars;
+    }
+
+    public char[] getChars() {
+        return chars;
+    }
+
+    public void setLen(int len) {
+        this.len = len;
+    }
+
+    public int getLen() {
+        return len;
     }
 
     public int length()
